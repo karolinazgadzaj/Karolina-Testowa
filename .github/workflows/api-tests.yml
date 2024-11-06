@@ -3,7 +3,7 @@
 
 name: Node.js CI
 env:
-  SECRET_PASSWORD: ${{ secret.SECRET_PASSWORD }}
+  SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
 
 on:
   push:
