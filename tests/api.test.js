@@ -60,13 +60,13 @@ describe("Api tests", () => {
     .inspect()
     .withBearerToken(token_response);
     expect(response.statusCode).to.eql(200);
+  });
+
+  it.only("Delete all books", async () => {
+    const response = await spec()
+    .delete(`${baseUrl}/BookStore/v1/Books?UserId=${userID}`)
+    .withBearerToken(token_response)
+    .inspect();
+    expect(response.statusCode).to.eql(204);
   })
-
-//   it("Delete all books", async () => {
-//     const response = await spec()
-//     .delete(`${baseUrl}/Account/v1/User/${userID}`)
-//     inspect()
-//     .withBearerToken(token_response)
-
-//   })
 })
